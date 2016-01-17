@@ -1,6 +1,9 @@
 [DbConnectionInfo]
-Host: #hostname or ip
-DbName: #dbname
-TableName: #tablename
-User: #db username
-Password: #db password
+Host: #str, hostname or ip
+DbName: #str, dbname
+TableName: #str, tablename
+User: #str, db username
+Password: #str, db password
+
+EnableCache: # bool, cache toggle
+CacheTimeoutSec: # int, cache max life of an object in seconds

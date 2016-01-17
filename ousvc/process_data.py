@@ -1,6 +1,5 @@
 from ousvc.data_contracts import DataContracts
 from ousvc.dbops import DbOps
-import sys
 
 
 class Process:
@@ -13,8 +12,8 @@ class Process:
 
         try:
             record = await DbOps.get_price(title, city)
-        except Exception:
-            return DataContracts.get_500(sys.exc_info())
+        except Exception as e:
+            return DataContracts.get_500(e)
         if record is None:
             return DataContracts.get_oudemo_404()
 

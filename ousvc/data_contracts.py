@@ -28,13 +28,13 @@ class DataContracts:
         })
 
     @staticmethod
-    def get_500(trace):
+    def get_500(exc):
         status = 500
         message = "A server error occurred"
         return json.dumps({
             "status": status,
             "content": {
                 "message": message,
-                "trace": str(trace)
+                "trace": repr(exc)
             }
         })

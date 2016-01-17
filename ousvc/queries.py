@@ -3,7 +3,7 @@ from ousvc.config import Config
 config = Config.get_config()
 
 list_price_select = \
-    "WITH offer AS (SELECT list_price AS price FROM {0} \
+    "WITH offer AS (SELECT list_price AS price FROM \"{0}\" \
     WHERE title = %(title)s {1}), \
     rowcount AS (SELECT count(price) AS total FROM offer) \
     SELECT price, total, count(price) AS qty FROM offer, rowcount \
@@ -12,7 +12,7 @@ list_price_select = \
 # alternative query option, may offer price recommendations that better indicate market value.
 # return sell price if available, otherwise list price
 sell_price_weighted_select = \
-    "WITH offer AS (SELECT CASE WHEN sell_price != Null THEN sell_price ELSE list_price END AS price FROM {0} \
+    "WITH offer AS (SELECT CASE WHEN sell_price != Null THEN sell_price ELSE list_price END AS price FROM \"{0}\" \
     WHERE title = %(title)s {1}), \
     rowcount AS (SELECT count(price) AS total FROM offer) \
     SELECT price, total, count(price) AS qty FROM offer, rowcount \

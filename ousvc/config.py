@@ -18,7 +18,9 @@ class Config:
             user = info['User']
             password = info['Password']
             instance.tablename = info['TableName']
-            instance.dsn = "host='{}' dbname='{}' user='{}' password='{}'" \
-                .format(host, dbname, user, password)
+            instance.cache_enabled = info.getboolean('EnableCache')
+            instance.cache_timeout = info['CacheTimeoutSec']
+            instance.dsn = "host='{host}' dbname='{name}' user='{user}' password='{password}'" \
+                .format(host=host, name=dbname, user=user, password=password)
             Data.instance = instance
         return Data.instance

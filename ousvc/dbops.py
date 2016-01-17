@@ -1,4 +1,5 @@
 import aiopg
+from ousvc.cache import Cache
 from ousvc.config import Config
 from ousvc.queries import Queries
 
@@ -17,9 +18,13 @@ class DbOps:
 
     @staticmethod
     async def get_price(title, city=None):
-        pool = await DbOps.get_connection_pool()
-        async with pool.acquire() as conn:
-            async with conn.cursor() as cursor:
-                query, params = Queries.get_listprice_select(title, city)
-                await cursor.execute(query, params)
-                return await cursor.fetchone()
+        record = Cache.get_record(title, city)
+        if record is None:
+            pool = await DbOps.get_connection_pool()
+            async with pool.acquire() as conn:
+                async with conn.cursor() as cursor:
+                    query, params = Queries.get_listprice_select(title, city)
+                    await cursor.execute(query, params)
+                    record = await cursor.fetchone()
+                    Cache.set_record(title, city, record)
+        return record
