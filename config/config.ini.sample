@@ -1,0 +1,6 @@
+[DbConnectionInfo]
+Host: #hostname or ip
+DbName: #dbname
+TableName: #tablename
+User: #db username
+Password: #db password
