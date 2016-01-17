@@ -1,12 +1,15 @@
 OU Price Picker
+=================
 Provide price recommendations for products based on product name and (optional) location
 
 Dependencies:
-Python 3.5
-aiohttp
-aiopg
+=======
+- Python 3.5
+- aiohttp
+- aiopg
 
-request format: http://<service>/item-price-service/?item=<item name>&city=<city name>
+request format: 
+http://<service>/item-price-service/?item=<item name>&city=<city name>
 item param is required, city is optional.
 
 200/OK response format: 
