@@ -7,8 +7,8 @@ class PriceService:
     @staticmethod
     async def oudemo(request):
         get_params = MultiDict(parse_qsl(request.query_string))
-        result = await Process.process(get_params)
-        return web.Response(text=result, content_type="application/json")
+        status, result = await Process.process(get_params)
+        return web.Response(text=result, content_type="application/json", status=status)
 
 
 app = web.Application()

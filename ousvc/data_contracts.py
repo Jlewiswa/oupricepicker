@@ -7,7 +7,7 @@ class DataContracts:
         status = 200
         city_text = "Not Specified" if city is None else city
         # OrderedDict?
-        return json.dumps({
+        return status, json.dumps({
             "status": status,
             "content": {
                 "item": item,
@@ -21,7 +21,7 @@ class DataContracts:
     def get_oudemo_404():
         status = 404
         message = "Not found"
-        return json.dumps({
+        return status, json.dumps({
             "status": status,
             "content": {
                 "message": message}
@@ -31,7 +31,7 @@ class DataContracts:
     def get_500(exc):
         status = 500
         message = "A server error occurred"
-        return json.dumps({
+        return status, json.dumps({
             "status": status,
             "content": {
                 "message": message,

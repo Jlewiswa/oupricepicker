@@ -17,6 +17,6 @@ class Process:
         if record is None:
             return DataContracts.get_oudemo_404()
 
-        price = record[0] / 100
+        price = record[0]
         count = record[1]
         return DataContracts.get_oudemo_200(title, count, price, city)
