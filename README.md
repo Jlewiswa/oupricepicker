@@ -45,7 +45,3 @@ item param is required, city is optional.
     "trace": [trace content]
     }
 }
-
-Open Issues:
-============
-Needs unit tests
