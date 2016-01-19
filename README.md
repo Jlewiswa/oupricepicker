@@ -2,6 +2,9 @@ OU Price Picker
 =================
 Provide price recommendations for products based on product name and (optional) location
 
+* Note: In the interest of presentation, I have intentionally employed various coding patterns 
+throughout the project. I apologize for any resulting confusion.
+
 Dependencies:
 =======
 - python 3.5
@@ -42,3 +45,7 @@ item param is required, city is optional.
     "trace": [trace content]
     }
 }
+
+Open Issues:
+============
+Needs unit tests

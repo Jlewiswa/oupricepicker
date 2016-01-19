@@ -2,6 +2,9 @@ from ousvc.data_contracts import DataContracts
 from ousvc.dbops import DbOps
 
 
+# Data processing layer. Receives params from dispatcher, validates, then
+# passes to dbops for db query. Responsible for returning a valid status code
+# and json-formatted response body.
 class Process:
     @staticmethod
     async def process(params):

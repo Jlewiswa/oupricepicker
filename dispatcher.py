@@ -3,6 +3,7 @@ from urllib.parse import parse_qsl
 from aiohttp import web, MultiDict
 
 
+# Main entry point. Receives http requests and passes to data processing
 class PriceService:
     @staticmethod
     async def oudemo(request):

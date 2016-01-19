@@ -1,11 +1,12 @@
 import json
 
 
+# Assembles json-formatted responses for available status codes.
 class DataContracts:
     @staticmethod
     def get_oudemo_200(item, count, price, city=None):
         status = 200
-        city_text = "Not Specified" if city is None else city
+        city_text = "Not specified" if city is None else city
         # OrderedDict?
         return status, json.dumps({
             "status": status,

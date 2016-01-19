@@ -8,6 +8,10 @@ class Pool:
     pool = None
 
 
+# Database operations. Receives validated title and city from process_data
+# and uses these values to query the database. Responsible for returning
+# a valid array with price & count, or None if no record is available.
+# With cache enabled, attempts to first retrieve a cached record.
 class DbOps:
     @staticmethod
     async def get_connection_pool():

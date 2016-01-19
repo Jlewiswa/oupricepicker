@@ -6,6 +6,7 @@ cache_enabled = config.cache_enabled
 cache_server = config.cache_server
 
 
+# Gets and sets cached records using memcached
 class Cache:
     @staticmethod
     def get_record(title, city):

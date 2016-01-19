@@ -21,6 +21,7 @@ sell_price_weighted_select = \
 city_clause = "AND city = %(city)s"
 
 
+# Assembles db query strings for DbOps.get_price()
 class Queries:
     @staticmethod
     def get_sellprice_select(title, city):

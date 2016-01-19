@@ -5,6 +5,7 @@ class Data:
     instance = None
 
 
+# Reads config.ini and sets values in the Data.instance singleton
 class Config:
     @staticmethod
     def get_config():
