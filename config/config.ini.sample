@@ -6,4 +6,4 @@ User: #str, db username
 Password: #str, db password
 
 EnableCache: # bool, cache toggle
-CacheTimeoutSec: # int, cache max life of an object in seconds
+MemcachedServer: # str, address of memcached service

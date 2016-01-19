@@ -4,9 +4,12 @@ Provide price recommendations for products based on product name and (optional) 
 
 Dependencies:
 =======
-- Python 3.5
+- python 3.5
+- postgresql
+- memcached
 - aiohttp
 - aiopg
+- pylibmc
 
 request format: 
 http://[host]/item-price-service/?item=[item name]&city=[city name]
